@@ -6,10 +6,11 @@ authors = ["sho-okumoto <115537918+sho-okumoto@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 jupyterlab = "^4.0.4"
 notebook = "^7.0.2"
-
+numpy = "^1.25.2"
+torch = {url = "https://download.pytorch.org/whl/cu113/torch-1.12.1%2Bcu113-cp39-cp39-win_amd64.whl"}
 
 [build-system]
 requires = ["poetry-core"]
