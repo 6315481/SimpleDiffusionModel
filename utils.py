@@ -46,3 +46,53 @@ def plot_paths(X):
     plt.legend()
     plt.title('Time Paths for Each Sample')
     plt.show()
+
+def plot_2d_path(a, interpolate=True):
+    plt.figure(figsize=(8, 6))
+    
+    if interpolate:
+        plt.plot(a[:, 0], a[:, 1], marker='o')
+    else:
+        plt.scatter(a[:, 0], a[:, 1], marker='o')
+        
+    plt.grid(True)
+    plt.show()
+
+def plot_2d_paths(a, interpolate=True):
+    N = a.shape[0]
+    rows = (N + 4) // 5
+
+    fig, axs = plt.subplots(rows, 5, figsize=(15, 3*rows))
+
+    for i in range(N):
+        ax = axs[i // 5, i % 5]
+        
+        if interpolate:
+            ax.plot(a[i, :, 0], a[i, :, 1], marker='o')
+        else:
+            ax.scatter(a[i, :, 0], a[i, :, 1], marker='o')
+        
+        ax.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+def plot_2d_paths_combined(a, interpolate=True):
+    N = a.shape[0]
+    
+    colors = plt.cm.jet(np.linspace(0, 1, N))
+    
+    plt.figure(figsize=(10, 8))
+    for i in range(N):
+        path = a[i]
+        
+        if interpolate:
+            plt.plot(path[:, 0], path[:, 1], color=colors[i], linestyle='-', linewidth=2)
+        else:
+            plt.scatter(path[:, 0], path[:, 1], color=colors[i], marker='o')
+        
+        plt.xlabel('X-axis')
+        plt.ylabel('Y-axis')
+        plt.title('Combined 2D Paths Plot')
+        plt.grid(True)
+    plt.legend()
+    plt.show()
