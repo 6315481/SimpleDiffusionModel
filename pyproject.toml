@@ -14,6 +14,7 @@ torch = {url = "https://download.pytorch.org/whl/cu113/torch-1.12.1%2Bcu113-cp39
 torchvision={url = "https://download.pytorch.org/whl/cu113/torchvision-0.13.1%2Bcu113-cp39-cp39-win_amd64.whl"}
 matplotlib = "^3.7.2"
 seaborn = "^0.12.2"
+imageio = "^2.31.1"
 
 [build-system]
 requires = ["poetry-core"]
