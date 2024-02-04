@@ -6,4 +6,5 @@ Scratch implementation of simple diffusion model.
 
 ## Biblography
 Denoising Diffusion Probabilistic Models : https://arxiv.org/abs/2006.11239
+
 Score-Based Generative Modeling through Stochastic Differential Equations : https://arxiv.org/abs/2011.13456
